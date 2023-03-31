@@ -1,11 +1,69 @@
 ✅ pass: ok
+dceca
+dbdae
+ddceb
+eeccc
+babcb
+eddbe
+dbcac
+deaba
+ccdbc
+decdd
 ✅ pass: sample
 ✅ pass: num
+ 10000 10.021616486421797 2.087716161908906
 ✅ pass: gauss
+ mu sd cliffs boot both
+ -- -- ------ ---- ----
+ 10.0 1 True True True
+ 10.1 1 False True False
+ 10.2 1 False False False
+ 10.3 1 False False False
+ 10.4 1 False False False
+ 10.6 1 False False False
+ 10.7 1 False False False
+ 10.8 1 False False False
+ 10.9 1 False False False
+ 11.0 1 False False False
 ✅ pass: bootmu
+		truee True True
+		false False False
+		false False False
 ✅ pass: basic
+
+neg3
+	 1 True True True
+	 1.05 True False True
+	 1.1 False True True
+	 1.15 False False True
+	 1.2 False False True
+	 1.25 False False True
+	 1.3 False False True
+	 1.35 False False True
+	 1.4 False False True
+	 1.45 False False True
 ✅ pass: pre
 ✅ pass: five
 ✅ pass: six
+ rx0  *                  |                    {8.94, 7.97, 9.23, 8.85, 8.89}
+ rx5  *                  |                    {8.07, 9.15, 10.05, 11.47, 10.56}
+ rx6  *                  |                    {10.63, 9.79, 8.74, 9.37, 10.19}
+ rx9  *-                 |                    {10.75, 10.89, 9.42, 10.46, 10.42}
+ rx1  -*-                |                    {10.41, 8.03, 11.04, 9.87, 11.92}
+ rx2             -*---   |                    {19.84, 21.25, 19.15, 18.43, 20.99}
+ rx3                     |     --*            {29.05, 28.75, 30.87, 29.65, 30.0}
+ rx4                     |     *--            {30.4, 29.36, 29.12, 30.09, 30.71}
+ rx7                     |                  -* {39.22, 39.71, 40.45, 38.81, 39.51}
+ rx8                     |                   * {44.07, 40.25, 43.19, 46.76, 39.3}
 ✅ pass: tiles
+ 1 rx0  *                  |                    {8.94, 7.97, 9.23, 8.85, 8.89}
+ 0 rx5  *                  |                    {8.07, 9.15, 10.05, 11.47, 10.56}
+ 1 rx6  *                  |                    {10.63, 9.79, 8.74, 9.37, 10.19}
+ 0 rx9  *-                 |                    {10.75, 10.89, 9.42, 10.46, 10.42}
+ 1 rx1  -*-                |                    {10.41, 8.03, 11.04, 9.87, 11.92}
+ 0 rx2             -*---   |                    {19.84, 21.25, 19.15, 18.43, 20.99}
+ 1 rx3                     |     --*            {29.05, 28.75, 30.87, 29.65, 30.0}
+ 0 rx4                     |     *--            {30.4, 29.36, 29.12, 30.09, 30.71}
+ 1 rx7                     |                  -* {39.22, 39.71, 40.45, 38.81, 39.51}
+ 0 rx8                     |                   * {44.07, 40.25, 43.19, 46.76, 39.3}
 ✅ pass: sk

@@ -321,6 +321,7 @@ def ok_test():
 def sample_test():
     for i in range(10):
         print(''.join(many(['a', 'b', 'c', 'd', 'e'], 5)))
+        get_ofile().write(''.join(many(['a', 'b', 'c', 'd', 'e'], 5)) + '\n')
     return 0
 
 def gauss_test():
@@ -333,6 +334,7 @@ def gauss_test():
         n.add(val)
     
     print('', n.total, n.mid(), n.div())
+    get_ofile().write('' + ' ' + str(n.total) + ' ' + str(n.mid()) + ' ' + str(n.div()) + '\n')
     return 0
 
 def bootmu_test():
@@ -340,7 +342,9 @@ def bootmu_test():
 
     for i in range(100): a.append(gaussian(10, 1))
     print('', 'mu', 'sd', 'cliffs', 'boot', 'both')
-    print('', '--', '--', '------', '----', '----')
+    get_ofile().write('' + ' mu' + ' sd' + ' cliffs' + ' boot' + ' both\n')
+    print('' + ' --' + ' --' + ' ------' + ' ----' + ' ----')
+    get_ofile().write('' + ' --' + ' --' + ' ------' + ' ----' + ' ----\n')
 
     for mu in np.linspace(10, 11, 10):
         b = []
@@ -348,18 +352,23 @@ def bootmu_test():
         cl = cliffsDelta(a, b)
         bs = bootstrap(a, b)
         print('', rnd(mu, 1), 1, cl, bs, cl and bs)
+        get_ofile().write('' + ' ' + str(rnd(mu, 1)) + ' ' + str(1) + ' ' + str(cl) + ' ' + str(bs) + ' ' + str(cl and bs) + '\n')
     
     return 0
 
 def basic_test():
     print("\t\ttruee", bootstrap([8, 7, 6, 2, 5, 8, 7, 3], [8, 7, 6, 2, 5, 8, 7, 3]), cliffsDelta( [8, 7, 6, 2, 5, 8, 7, 3], [8, 7, 6, 2, 5, 8, 7, 3]))
+    get_ofile().write("\t\ttruee " + str(bootstrap([8, 7, 6, 2, 5, 8, 7, 3], [8, 7, 6, 2, 5, 8, 7, 3])) + ' ' + str(cliffsDelta( [8, 7, 6, 2, 5, 8, 7, 3], [8, 7, 6, 2, 5, 8, 7, 3])) + '\n')
     print("\t\tfalse", bootstrap([8, 7, 6, 2, 5, 8, 7, 3],  [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]), cliffsDelta( [8, 7, 6, 2, 5, 8, 7, 3],  [0.1, 0.2, 0.3, 0.4, 0.5, 0.7])) 
+    get_ofile().write("\t\tfalse " + str(bootstrap([8, 7, 6, 2, 5, 8, 7, 3],  [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7])) + ' ' + str(cliffsDelta( [8, 7, 6, 2, 5, 8, 7, 3],  [0.1, 0.2, 0.3, 0.4, 0.5, 0.7])) + '\n')
     print("\t\tfalse", bootstrap([0.34, 0.49, 0.51, 0.6, .34, .49, .51, .6], [0.6,  0.7,  0.8,  0.9,   .6,   .7,   .8,  .9]), cliffsDelta([0.34, 0.49, 0.51, 0.6, 0.34, 0.49, 0.51, 0.6],  [0.6, 0.7, 0.8, 0.9, 0.6, 0.7, 0.8, 0.9]))
+    get_ofile().write("\t\tfalse " + str(bootstrap([0.34, 0.49, 0.51, 0.6, .34, .49, .51, .6], [0.6,  0.7,  0.8,  0.9,   .6,   .7,   .8,  .9])) + ' ' + str(cliffsDelta([0.34, 0.49, 0.51, 0.6, 0.34, 0.49, 0.51, 0.6],  [0.6, 0.7, 0.8, 0.9, 0.6, 0.7, 0.8, 0.9])) + '\n')
 
     return 0
 
 def pre_test():
     print('\neg3')
+    get_ofile().write('\nneg3\n')
     d = 1
     for i in range(10):
         t1, t2 = [], []
@@ -367,6 +376,7 @@ def pre_test():
             t1.append(gaussian(10, 1))
             t2.append(gaussian(d*10, 1))
         print('\t', rnd(d, 2) , d<1.1, bootstrap(t1, t2), bootstrap(t1, t1))
+        get_ofile().write('\t' + ' ' + str(rnd(d, 2)) + ' ' + str(d<1.1) + ' ' + str(bootstrap(t1, t2)) + ' ' + str(bootstrap(t1, t1)) + '\n')
         d = d + 0.05
     return 0
 
@@ -408,7 +418,9 @@ def tiles_test():
 
     sort_rxs(rxs)
     
-    for rx in tiles(rxs): print('', rx['name'], rx['show'])
+    for rx in tiles(rxs): 
+        print('', rx['name'], rx['show'])
+        get_ofile().write(' ' + str(rx['name']) + ' ' + str(rx['show']) + '\n')
 
     return 0
 
@@ -428,6 +440,8 @@ def sk_test():
     
     for k, v in enumerate([a,b,c,d,e,f,g,h,j,k]): rxs.append(RX(v, 'rx{}'.format(k)))
     
-    for rx in tiles(scottKnot(rxs)): print('', rx['rank'], rx['name'], rx['show'])
+    for rx in tiles(scottKnot(rxs)): 
+        print('', rx['rank'], rx['name'], rx['show'])
+        get_ofile().write('' + ' ' + str(rx['rank']) + ' ' + str(rx['name']) + ' ' + str(rx['show']) + '\n')
 
     return 0

@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: hw7-test
-        run: python src/main.py -g all
+        run: python3 src/main.py -g all
